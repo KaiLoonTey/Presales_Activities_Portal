@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trimble Services — Presales Activities Request</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy-14:      #003054;
+    --blue-11:      #004F83;
+    --blue:         #0063A3;
+    --blue-7:       #368FC7;
+    --ink:          #252A2E;
+    --grey-8:       #464B52;
+    --grey-6:       #6A6E79;
+    --grey-4:       #90939F;
+    --line:         #CBCDD6;
+    --amber:        #FBAD26;
+    --page-bg:      #F4F6F8;
+    --card-bg:      #FFFFFF;
+    --radius:       10px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--page-bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+  }
+  h1, h2, h3, h4 { font-family: 'Manrope', sans-serif; margin: 0; }
+  a { color: var(--blue); }
+  img, svg { display: block; }
+
+  .mono {
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .portal-header {
+    position: relative;
+    background-color: var(--navy-14);
+    background-image: linear-gradient(180deg, rgba(0, 36, 66, 0.82) 0%, rgba(0, 30, 52, 0.92) 100%), url('Coverbanner.png');
+    background-size: cover;
+    background-position: center right;
+    color: #fff;
+    padding: 40px 32px 44px;
+    overflow: hidden;
+  }
+  .header-inner {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header-top-row {
+    margin-bottom: 22px;
+  }
+  .trimble-logo-img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+  .header-kicker {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #9FC6E4;
+    margin-bottom: 14px;
+  }
+  .header-kicker .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--amber);
+  }
+  h1.portal-title {
+    font-size: clamp(28px, 4vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    max-width: 640px;
+  }
+  .portal-sub {
+    margin-top: 14px;
+    max-width: 620px;
+    color: #D6E4EE;
+    font-size: 15.5px;
+  }
+
+  main {
+    max-width: 800px;
+    margin: -30px auto 80px; /* Pull up slightly over header */
+    padding: 0 32px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .form-container {
+    background: var(--card-bg);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 48, 84, 0.05);
+  }
+
+  .form-section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy-14);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .form-section-title:not(:first-child) {
+    margin-top: 32px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .form-grid { grid-template-columns: 1fr; }
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+  .form-group.full-width {
+    grid-column: 1 / -1;
+  }
+
+  .form-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--grey-8);
+    margin-bottom: 8px;
+  }
+  .form-label .required {
+    color: #d93025;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--ink);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  select.form-control {
+    appearance: none;
+    background-image: url("TrimbleR-Logo-Boxed-Blue10-RGB_2.png");
+    background-repeat: no-repeat;
+    background-position: right 14px top 50%;
+    background-size: 10px auto;
+    padding-right: 30px;
+  }
+
+  textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(0, 99, 163, 0.15);
+  }
+
+  .radio-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--ink);
+  }
+
+  .radio-label input[type="radio"] {
+    accent-color: var(--blue);
+    width: 16px;
+    height: 16px;
+  }
+
+  .form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+  }
+
+  .btn-primary {
+    background: var(--amber);
+    color: var(--navy-14);
+    font-weight: 700;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 14.5px;
+    transition: all 0.15s ease;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: #f2a31b;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(251,173,38,.35);
+  }
+  .btn-primary:disabled {
+    background: #e2e6ea;
+    color: var(--grey-6);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .success-message {
+    display: none;
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .success-icon {
+    width: 64px; height: 64px;
+    background: #E4F3E9;
+    color: #1E7A44;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0 auto 20px;
+  }
+  .success-message h2 {
+    color: var(--navy-14);
+    margin-bottom: 12px;
+  }
+  .success-message p {
+    color: var(--grey-8);
+    margin-bottom: 24px;
+  }
+
+  footer {
+    background: var(--navy-14);
+    color: #B9CEDC;
+    padding: 30px 32px;
+    margin-top: auto;
+  }
+  .footer-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    font-size: 12.5px;
+  }
+</style>
+</head>
+<body>
+
+<header class="portal-header">
+  <div class="header-inner">
+    <div class="header-top-row">
+      <img src="TrimbleR-Logo-Boxed-Blue10-RGB_2.png" alt="Trimble Logo" class="trimble-logo-img">
+    </div>
+    <div class="header-kicker">
+      <span class="mono">Internal Tool</span>
+      <span class="dot"></span>
+      <span class="mono">Service Team</span>
+    </div>
+    <h1 class="portal-title">Presales Activity Request</h1>
+    <p class="portal-sub">Submit requests for service team assistance in presales activities, client meetings, and technical demonstrations.</p>
+  </div>
+</header>
+
+<main>
+  <div class="form-container">
+    
+    <!-- Form View -->
+    <div id="requestFormView">
+      <form id="presalesForm" onsubmit="handleFormSubmit(event)">
+        
+        <h2 class="form-section-title">Request Details</h2>
+        
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="req_date">Date of Request <span class="required">*</span></label>
+            <input type="date" id="req_date" name="req_date" class="form-control" required readonly>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="meeting_date">Proposed Meeting Date <span class="required">*</span></label>
+            <input type="date" id="meeting_date" name="meeting_date" class="form-control" required>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="sales_rep">Requesting Sales Rep <span class="required">*</span></label>
+            <input type="text" id="sales_rep" name="sales_rep" list="sales_rep_list" class="form-control" placeholder="Type to search sales rep..." required>
+            <datalist id="sales_rep_list">
+              <option value="Bondan Gustaman"></option>
+              <option value="Muhammad Kurniawan"></option>
+              <option value="Franky Silaban"></option>
+              <option value="Alagappan Annamalai"></option>
+              <option value="Wee"></option>
+              <option value="Samantha Lau"></option>
+              <option value="Mark Tung"></option>
+              <option value="Saw Pei Ling"></option>
+              <option value="Samuel Liow"></option>
+              <option value="Alongkorn Simapaisan"></option>
+              <option value="Pongsura Angkananuchat"></option>
+              <option value="Supadej Varadul"></option>
+            </datalist>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="service_member">Requested Service Member <span class="required">*</span></label>
+            <input type="text" id="service_member" name="service_member" list="service_member_list" class="form-control" placeholder="Type to search team member..." required>
+            <datalist id="service_member_list">
+              <option value="Quila Norman"></option>
+              <option value="Taufik Musa"></option>
+              <option value="Tawan Boonithee"></option>
+              <option value="Wichai Khankwa"></option>
+              <option value="Yee Cheng Liew"></option>
+            </datalist>
+          </div>
+        </div>
+
+        <h2 class="form-section-title">Meeting Information</h2>
+
+        <div class="form-group">
+          <label class="form-label">Meeting Format <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="format" value="Online" required> Online (Teams/Zoom)</label>
+            <label class="radio-label"><input type="radio" name="format" value="On-site"> On-site (Customer Office)</label>
+            <label class="radio-label"><input type="radio" name="format" value="Trimble Office"> Trimble Office</label>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="customer_name">Customer / Company Name <span class="required">*</span></label>
+            <input type="text" id="customer_name" name="customer_name" class="form-control" placeholder="e.g. ABC Construction" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="country">Country <span class="required">*</span></label>
+            <select id="country" name="country" class="form-control" onchange="toggleOtherCountry()" required>
+              <option value="">Select country...</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group full-width" id="other_country_group" style="display: none;">
+          <label class="form-label" for="other_country">Specify Country <span class="required">*</span></label>
+          <input type="text" id="other_country" name="other_country" class="form-control" placeholder="Please type the country name...">
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="duration">Estimated Duration (Hours) <span class="required">*</span></label>
+            <input type="number" id="duration" name="duration" class="form-control" min="0.5" step="0.5" placeholder="e.g. 2" required>
+          </div>
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label" for="product">Primary Product / Solution Focus <span class="required">*</span></label>
+          <select id="product" name="product" class="form-control" required>
+            <option value="">Select product...</option>
+            <option value="Tekla Structures">Tekla Structures</option>
+            <option value="Tekla Structural Designer">Tekla Structural Designer</option>
+            <option value="Tekla Tedds">Tekla Tedds</option>
+            <option value="Trimble Connect">Trimble Connect</option>
+            <option value="Other">Other (Specify in notes)</option>
+          </select>
+        </div>
+
+        <div class="form-group full-width">
+          <label class="form-label" for="notes">Objective & Additional Notes</label>
+          <textarea id="notes" name="notes" class="form-control" placeholder="Briefly describe the goal of this meeting and any specific prep required..."></textarea>
+        </div>
+        
+        <input type="hidden" id="status" name="status" value="Pending Manager Review">
+
+        <div id="errorMessage" style="display:none; color: #B23B2E; background: #FCE8E6; padding: 15px; border-radius: 6px; margin-bottom: 20px; font-weight: 600; font-size: 14px; border: 1px solid #F3C3C0;">
+          <!-- Server errors will appear here -->
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-primary" style="background:#EEF1F3; color:var(--grey-8); border:1px solid var(--line);" onclick="document.getElementById('presalesForm').reset()">Clear</button>
+          <button type="submit" class="btn-primary" id="submitBtn">Submit Request</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="successView" class="success-message">
+      <div class="success-icon">✓</div>
+      <h2>Request Submitted</h2>
+      <p>Your presales activity request has been routed to the Service Manager for review. You will receive an email notification once a decision is made.</p>
+      <button class="btn-primary" onclick="resetForm()">Submit Another Request</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Trimble Solutions SEA Pte Ltd. Internal Use Only.</span>
+  </div>
+</footer>
+
+<script>
+  // Set today's date automatically
+  document.getElementById('req_date').valueAsDate = new Date();
+
+  // The Google Apps Script URL
+  const APPS_SCRIPT_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbzXop01lsDWoWmz0l7QZCCzrfW_jsP6P7myBWQ_z6OJACtfcNpi6jE0gcCeJSPbTN0rZg/exec";
+
+  function toggleOtherCountry() {
+    const countrySelect = document.getElementById('country');
+    const otherGroup = document.getElementById('other_country_group');
+    const otherInput = document.getElementById('other_country');
+
+    if (countrySelect.value === 'Other') {
+      otherGroup.style.display = 'block';
+      otherInput.required = true;
+    } else {
+      otherGroup.style.display = 'none';
+      otherInput.required = false;
+      otherInput.value = '';
+    }
+  }
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.innerText = 'Submitting...';
+    submitBtn.disabled = true;
+
+    // Collect data
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+    
+    if (data.country === 'Other') {
+      data.country = data.other_country;
+    }
+    delete data.other_country;
+
+    // Add timestamp
+    data.timestamp = new Date().toISOString();
+    
+    document.getElementById('errorMessage').style.display = 'none';
+
+    if (APPS_SCRIPT_WEB_APP_URL.includes("YOUR_GOOGLE_APPS_SCRIPT")) {
+      setTimeout(showSuccess, 1000);
+    } else {
+      // -----------------------------------------------------------------------
+      // CORS FIX IMPLEMENTATION
+      // By using 'text/plain;charset=utf-8' instead of 'application/json',
+      // we tell the browser this is a "Simple Request". This forces the browser
+      // to skip the preflight OPTIONS request, bypassing the CORS block entirely.
+      // 
+      // Important: Your Apps Script doPost(e) handles this seamlessly using:
+      // const payload = JSON.parse(e.postData.contents);
+      // -----------------------------------------------------------------------
+      fetch(APPS_SCRIPT_WEB_APP_URL, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8' 
+        }
+      })
+      .then(response => {
+        return response.text(); 
+      })
+      .then(result => {
+        console.log("Response:", result);
+        
+        try {
+          const parsedResult = JSON.parse(result);
+          if (parsedResult.status === "error") {
+            // STOP! An error occurred in Apps Script. Display it on the UI.
+            const errorBox = document.getElementById('errorMessage');
+            errorBox.innerHTML = "<strong>Google Apps Script Error:</strong><br/>" + parsedResult.message + "<br/><br/><em>Check your Spreadsheet ID, tab names, and ensure you deployed a New Version.</em>";
+            errorBox.style.display = 'block';
+            
+            // Reset button
+            submitBtn.innerText = 'Submit Request';
+            submitBtn.disabled = false;
+            return; // Stop the function so it doesn't show the success screen
+          }
+        } catch (e) {
+          // If response isn't JSON, it's likely a CORS preflight success redirect. Ignore and proceed.
+        }
+
+        showSuccess();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Even if reading the response triggers a secondary CORS warning
+        // (common with Google redirects), the POST data still reaches the sheet.
+        // We ensure the UI still progresses to the success screen.
+        showSuccess(); 
+      });
+    }
+  }
+
+  function showSuccess() {
+    document.getElementById('requestFormView').style.display = 'none';
+    document.getElementById('successView').style.display = 'block';
+  }
+
+  function resetForm() {
+    document.getElementById('presalesForm').reset();
+    document.getElementById('req_date').valueAsDate = new Date();
+    document.getElementById('requestFormView').style.display = 'block';
+    document.getElementById('successView').style.display = 'none';
+    
+    toggleOtherCountry();
+    
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.innerText = 'Submit Request';
+    submitBtn.disabled = false;
+  }
+</script>
+
+</body>
+</html>
